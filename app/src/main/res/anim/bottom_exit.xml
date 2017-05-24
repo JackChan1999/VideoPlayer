@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--平移动画   不要保持动画后的效果-->
+    <translate
+        android:duration="500"
+        android:fillAfter="true"
+        android:fromYDelta="0"
+        android:toYDelta="100%"/>
+    <!--透明度动画   要保持动画后的效果-->
+    <alpha
+        android:duration="500"
+        android:fillAfter="true"
+        android:fromAlpha="1"
+        android:toAlpha="0"/>
+</set>
