@@ -390,7 +390,7 @@ public class VideoMediaController extends RelativeLayout {
     }
 
     private VideoPlayer myVideoPlayer;
-    public void setMyVideoPlayer(VideoPlayer myVideoPlayer) {
+    public void setVideoPlayer(VideoPlayer myVideoPlayer) {
         this.myVideoPlayer = myVideoPlayer;
     }
 

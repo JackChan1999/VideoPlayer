@@ -70,8 +70,8 @@ public class VideoPlayer extends RelativeLayout {
         ButterKnife.bind(this,view);
 
         initViewDisplay();
-        //把MyVideoPlayer对象传递给MyVideoMediaController
-        mediaController.setMyVideoPlayer(this);
+        //把VideoPlayer对象传递给VideoMediaController
+        mediaController.setVideoPlayer(this);
 
         //进行TextureView控件创建的监听
         videoView.setSurfaceTextureListener(surfaceTextureListener);

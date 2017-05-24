@@ -50,9 +50,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         initViews();
         initData();
         initRecyclerView();
+    }
+
+    private void initRecyclerView() {
+        //初始化RecyclerView
+        lm = new LinearLayoutManager(this);
+        rv.setLayoutManager(lm);
+
+        // 添加分割线
+        // rv.addItemDecoration(new RecycleViewDivider(this,LinearLayoutManager.HORIZONTAL,1, Color.BLACK));
+
+        adapter = new VideoPlayListAdatper(this, videoPlayerItemInfoList);
+        rv.setAdapter(adapter);
+        //设置滑动监听
+        rv.addOnScrollListener(onScrollListener);
     }
 
     private void initViews() {
@@ -69,20 +84,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 20; i++) {
             videoPlayerItemInfoList.add(new VideoPlayerItemInfo(i,url));
         }
-    }
-
-    private void initRecyclerView() {
-        //初始化RecyclerView
-        lm = new LinearLayoutManager(this);
-        rv.setLayoutManager(lm);
-
-        // 添加分割线
-        // rv.addItemDecoration(new RecycleViewDivider(this,LinearLayoutManager.HORIZONTAL,1, Color.BLACK));
-
-        adapter = new VideoPlayListAdatper(this, videoPlayerItemInfoList);
-        rv.setAdapter(adapter);
-        //设置滑动监听
-        rv.addOnScrollListener(onScrollListener);
     }
 
     private RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {

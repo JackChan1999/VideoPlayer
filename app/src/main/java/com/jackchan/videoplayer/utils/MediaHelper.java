@@ -34,7 +34,11 @@ public final class MediaHelper {
     //获取多媒体对象
     public static MediaPlayer getInstance(){
         if(mPlayer == null){
-            mPlayer = new MediaPlayer();
+            synchronized (MediaHelper.class){
+                if (mPlayer == null){
+                    mPlayer = new MediaPlayer();
+                }
+            }
         }
         return  mPlayer;
     }
